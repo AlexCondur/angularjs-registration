@@ -1,0 +1,90 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-xs-12">
+			<h3 class="categ">Registration form:</h3>
+			<form name="usersCtrl.form" novalidate>
+				<!-- firstName -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.firstName.$invalid && !usersCtrl.form.firstName.$pristine }">
+					<input type="text" pattern="[a-zA-Z- ]+" name="firstName" placeholder="First Name" class="form-control" ng-model="usersCtrl.formData.firstName" ng-maxlength="40" required>
+					<p ng-show="usersCtrl.form.firstName.$invalid && !usersCtrl.form.firstName.$pristine" class="help-block">Enter a valid name using a maximum or 40 alphabetic characters!</p>
+				</div>
+
+				<!-- lastName -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.lastName.$invalid && !usersCtrl.form.lastName.$pristine }">
+					<input type="text" pattern="[a-zA-Z- ]+" name="lastName" placeholder="Last Name" class="form-control" ng-model="usersCtrl.formData.lastName" ng-maxlength="40" required>
+					<p ng-show="usersCtrl.form.lastName.$invalid && !usersCtrl.form.lastName.$pristine" class="help-block">Enter a valid name using a maximum or 40 alphabetic characters!</p>
+				</div>
+
+				<!-- telephone -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.tel.$invalid && !usersCtrl.form.tel.$pristine }">
+					<input type="text" pattern="[0-9.]+" name="tel" placeholder="Phone no." class="form-control" ng-model="usersCtrl.formData.tel" ng-minlength="10" ng-maxlength="10" required>
+					<p ng-show="usersCtrl.form.tel.$invalid && !usersCtrl.form.tel.$pristine" class="help-block">Enter a valid phone number!</p>
+				</div>
+
+				<!-- email -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.email.$invalid && !usersCtrl.form.email.$pristine }">
+					<input type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Email" class="form-control" ng-model="usersCtrl.formData.email" required>
+					<p ng-show="usersCtrl.form.email.$invalid && !usersCtrl.form.email.$pristine" class="help-block">Enter a valid email address(Ex: useremail@domain.com)!</p>
+				</div>
+
+				<!-- age -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.age.$invalid && !usersCtrl.form.age.$pristine }">
+					<input type="number" min="7" max="122" name="age" placeholder="Age" class="form-control" ng-model="usersCtrl.formData.age" required>
+					<p ng-show="usersCtrl.form.age.$invalid && !usersCtrl.form.age.$pristine" class="help-block">Enter a valid age!</p>
+				</div>
+
+				<!-- gender -->
+				<div class="form-group" ng-class="{'has-error' : usersCtrl.form.gender.$invalid && !usersCtrl.form.gender.$pristine }">
+					<select name="gender" class="form-control" ng-model="usersCtrl.formData.gender" required>
+						<option value>Gender</option>
+						<option value = "M">M</option>
+						<option value = "F">F</option>
+					</select>
+					<p ng-show="usersCtrl.form.gender.$invalid && !usersCtrl.form.gender.$pristine" class="help-block">Select an option!</p>
+				</div>
+
+				<!-- buttons -->
+				<button ng-hide="usersCtrl.showButton" type="button" class="btn btn-primary" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.registerUser()">Register</button>
+				<button ng-hide="usersCtrl.showButton" type="button" class="btn btn-danger" ng-disabled="usersCtrl.form.$pristine" ng-click="usersCtrl.resetForm()">Reset form</button>
+				<button ng-show="usersCtrl.showButton" type="button"  class="btn btn-warning" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.saveChanges()">Save</button>
+				<button ng-show="usersCtrl.showButton" type="button" class="btn btn-danger" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.cancelEdit()">Cancel</button>
+			</form>
+		</div>
+
+		<div class="col-md-8 col-xs-12" align="center">
+			<h3 class="categ">Utilizatori inregistrați:</h3>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Phone number</th>
+							<th>Email</th>
+							<th>Age</th>
+							<th>Gender</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in usersCtrl.users">
+							<td style="white-space:nowrap;">
+								<div>
+									<button class="btn btn-sm btn-danger" ng-click="usersCtrl.deleteUser(user)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+									<button class="btn btn-sm btn-warning" ng-click="usersCtrl.editUser(user)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+									<input type="checkbox" ng-model="user.selected">
+								</div>
+							</td>
+							<td>{{user.firstName}}</td>
+							<td>{{user.lastName}}</td>
+							<td>{{user.tel}}</td>
+							<td>{{user.email}}</td>
+							<td>{{user.age}}</td>
+							<td>{{user.gender}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

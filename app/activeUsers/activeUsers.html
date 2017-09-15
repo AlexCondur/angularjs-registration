@@ -1,0 +1,29 @@
+<div class="container">
+	<input type="text" class="form-control ng-pristine ng-valid" id="search" ng-model="searchKey" placeholder="Search">
+	<h3 class="categ">Utilizatori activi:</h3>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Nume</th>
+						<th>Prenume</th>
+						<th>Telefon</th>
+						<th>E-mail</th>
+						<th>Vârstă</th>
+						<th>Gen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in activeCtrl.users | filter: searchKey" ng-if="user.selected === true">
+						<td>{{user.lastName}}</td>
+						<td>{{user.firstName}}</td>
+						<td>{{user.tel}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.age}}</td>
+						<td>{{user.gender}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

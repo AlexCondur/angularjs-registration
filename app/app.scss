@@ -1,0 +1,40 @@
+$grayish: #8c8c8c;
+
+body {
+    background: linear-gradient(to right, #abbaab, #ffffff);
+}
+
+#buttons {
+    background-color: #bfbfbf;
+    ul {
+        list-style-type: none;
+        border-bottom: 5px solid $grayish;
+    }
+    a {
+        font-weight: bold;
+        color: white;
+        font-size: 150%;
+        &focus,
+        &hover {
+            color: $grayish;
+        }
+    }
+}
+
+#title_home {
+    margin: auto;
+	font-weight: bold;
+	text-align: center;
+	font-size: 500%; 
+	padding-top: 250px;
+}
+
+.categ {
+	font-style: italic;
+	font-weight: bold;
+}
+
+th {
+	background-color: #2E4053;
+	color: #fff;
+}

@@ -1,0 +1,35 @@
+<html ng-app="app" ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AngularApp</title>
+  <link rel="stylesheet" href="libs/vendor.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<header>
+	<div id="buttons">
+		<ul class="nav nav-justified">
+			<li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+			<li><a ui-sref="activeUsers" ui-sref-active="active">Active Users</a></li>
+			<li><a ui-sref="users" ui-sref-active="active">Users</a></li>
+		</ul>
+	</div>
+</header>
+
+<body>
+	<div class="container-fixed">
+		<div ui-view></div>
+  
+	</div>
+
+	
+	<script src="libs/vendor.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-mocks.js"></script>
+
+	<script src="scripts/main.js"></script>
+</body>
+</html>

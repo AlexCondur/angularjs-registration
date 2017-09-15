@@ -1,0 +1,58 @@
+<html ng-app="app" ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AngularApp</title>
+  <!-- build:css libs/vendor.css -->
+  <link rel="stylesheet" href="content/css/bootstrap.min.css">
+  <!-- endbuild -->
+  <!-- build:css css/app.css -->
+  <link rel="stylesheet" href="content/css/app.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<header>
+	<div id="buttons">
+		<ul class="nav nav-justified">
+			<li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+			<li><a ui-sref="activeUsers" ui-sref-active="active">Active Users</a></li>
+			<li><a ui-sref="users" ui-sref-active="active">Users</a></li>
+		</ul>
+	</div>
+</header>
+
+<body>
+	<div class="container-fixed">
+		<div ui-view></div>
+  
+	</div>
+
+	
+	<!-- build:js libs/vendor.js -->
+	<script type="text/javascript" src="content/libs/angular.min.js"></script>
+	<script type="text/javascript" src="content/libs/angular-mocks.js"></script>	
+	<script type="text/javascript" src="content/libs/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="content/libs/lodash.js"></script>
+	<script type="text/javascript" src="content/libs/ngStorage.min.js"></script>
+	<script type="text/javascript" src="content/libs/angular-md5.js"></script>
+	<!-- endbuild -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-mocks.js"></script>
+
+	<!-- build:js scripts/main.js -->
+	<script type="text/javascript" src="app/templates.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/app.service.js"></script>
+
+	<script type="text/javascript" src="app/home/home.config.js"></script>
+	<script type="text/javascript" src="app/activeUsers/activeUsers.config.js"></script>
+	<script type="text/javascript" src="app/users/users.config.js"></script>
+
+	<script type="text/javascript" src="app/home/home.controller.js"></script>
+	<script type="text/javascript" src="app/activeUsers/activeUsers.controller.js"></script>
+	<script type="text/javascript" src="app/users/users.controller.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

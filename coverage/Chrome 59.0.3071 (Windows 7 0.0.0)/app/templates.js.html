@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\templates.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> templates.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/3</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3</td><td class="line-coverage quiet"><span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span></td><td class="text"><pre class="prettyprint lang-js">angular.module('appTemplates', []).run(['$templateCache', function($templateCache) {$templateCache.put('app/activeUsers/activeUsers.html','&lt;div class="container"&gt;\n\t&lt;input type="text" class="form-control ng-pristine ng-valid" id="search" ng-model="searchKey" placeholder="Search"&gt;\n\t&lt;h3 class="categ"&gt;Utilizatori activi:&lt;/h3&gt;\n\t\t&lt;div class="table-responsive"&gt;\n\t\t\t&lt;table class="table table-bordered table-hover"&gt;\n\t\t\t\t&lt;thead&gt;\n\t\t\t\t\t&lt;tr&gt;\n\t\t\t\t\t\t&lt;th&gt;Nume&lt;/th&gt;\n\t\t\t\t\t\t&lt;th&gt;Prenume&lt;/th&gt;\n\t\t\t\t\t\t&lt;th&gt;Telefon&lt;/th&gt;\n\t\t\t\t\t\t&lt;th&gt;E-mail&lt;/th&gt;\n\t\t\t\t\t\t&lt;th&gt;V\xE2rst\u0103&lt;/th&gt;\n\t\t\t\t\t\t&lt;th&gt;Gen&lt;/th&gt;\n\t\t\t\t\t&lt;/tr&gt;\n\t\t\t\t&lt;/thead&gt;\n\t\t\t\t&lt;tbody&gt;\n\t\t\t\t\t&lt;tr ng-repeat="user in activeCtrl.users | filter: searchKey" ng-if="user.selected === true"&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.lastName}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.firstName}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.tel}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.email}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.age}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;td&gt;{{user.gender}}&lt;/td&gt;\n\t\t\t\t\t&lt;/tr&gt;\n\t\t\t\t&lt;/tbody&gt;\n\t\t\t&lt;/table&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;');
+$templateCache.put('app/users/users.html','&lt;div class="container"&gt;\n\t&lt;div class="row"&gt;\n\t\t&lt;div class="col-md-4 col-xs-12"&gt;\n\t\t\t&lt;h3 class="categ"&gt;Registration form:&lt;/h3&gt;\n\t\t\t&lt;form name="usersCtrl.form" novalidate&gt;\n\t\t\t\t&lt;!-- firstName --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.firstName.$invalid &amp;&amp; !usersCtrl.form.firstName.$pristine }"&gt;\n\t\t\t\t\t&lt;input type="text" pattern="[a-zA-Z- ]+" name="firstName" placeholder="First Name" class="form-control" ng-model="usersCtrl.formData.firstName" ng-maxlength="40" required&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.firstName.$invalid &amp;&amp; !usersCtrl.form.firstName.$pristine" class="help-block"&gt;Enter a valid name using a maximum or 40 alphabetic characters!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- lastName --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.lastName.$invalid &amp;&amp; !usersCtrl.form.lastName.$pristine }"&gt;\n\t\t\t\t\t&lt;input type="text" pattern="[a-zA-Z- ]+" name="lastName" placeholder="Last Name" class="form-control" ng-model="usersCtrl.formData.lastName" ng-maxlength="40" required&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.lastName.$invalid &amp;&amp; !usersCtrl.form.lastName.$pristine" class="help-block"&gt;Enter a valid name using a maximum or 40 alphabetic characters!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- telephone --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.tel.$invalid &amp;&amp; !usersCtrl.form.tel.$pristine }"&gt;\n\t\t\t\t\t&lt;input type="text" pattern="[0-9.]+" name="tel" placeholder="Phone no." class="form-control" ng-model="usersCtrl.formData.tel" ng-minlength="10" ng-maxlength="10" required&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.tel.$invalid &amp;&amp; !usersCtrl.form.tel.$pristine" class="help-block"&gt;Enter a valid phone number!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- email --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.email.$invalid &amp;&amp; !usersCtrl.form.email.$pristine }"&gt;\n\t\t\t\t\t&lt;input type="email" pattern="[^@]+@[^@]+\\.[a-zA-Z]{2,6}" name="email" placeholder="Email" class="form-control" ng-model="usersCtrl.formData.email" required&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.email.$invalid &amp;&amp; !usersCtrl.form.email.$pristine" class="help-block"&gt;Enter a valid email address(Ex: useremail@domain.com)!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- age --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.age.$invalid &amp;&amp; !usersCtrl.form.age.$pristine }"&gt;\n\t\t\t\t\t&lt;input type="number" min="7" max="122" name="age" placeholder="Age" class="form-control" ng-model="usersCtrl.formData.age" required&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.age.$invalid &amp;&amp; !usersCtrl.form.age.$pristine" class="help-block"&gt;Enter a valid age!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- gender --&gt;\n\t\t\t\t&lt;div class="form-group" ng-class="{\'has-error\' : usersCtrl.form.gender.$invalid &amp;&amp; !usersCtrl.form.gender.$pristine }"&gt;\n\t\t\t\t\t&lt;select name="gender" class="form-control" ng-model="usersCtrl.formData.gender" required&gt;\n\t\t\t\t\t\t&lt;option value&gt;Gender&lt;/option&gt;\n\t\t\t\t\t\t&lt;option value = "M"&gt;M&lt;/option&gt;\n\t\t\t\t\t\t&lt;option value = "F"&gt;F&lt;/option&gt;\n\t\t\t\t\t&lt;/select&gt;\n\t\t\t\t\t&lt;p ng-show="usersCtrl.form.gender.$invalid &amp;&amp; !usersCtrl.form.gender.$pristine" class="help-block"&gt;Select an option!&lt;/p&gt;\n\t\t\t\t&lt;/div&gt;\n\n\t\t\t\t&lt;!-- buttons --&gt;\n\t\t\t\t&lt;button ng-hide="usersCtrl.showButton" type="button" class="btn btn-primary" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.registerUser()"&gt;Register&lt;/button&gt;\n\t\t\t\t&lt;button ng-hide="usersCtrl.showButton" type="button" class="btn btn-danger" ng-disabled="usersCtrl.form.$pristine" ng-click="usersCtrl.resetForm()"&gt;Reset form&lt;/button&gt;\n\t\t\t\t&lt;button ng-show="usersCtrl.showButton" type="button"  class="btn btn-warning" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.saveChanges()"&gt;Save&lt;/button&gt;\n\t\t\t\t&lt;button ng-show="usersCtrl.showButton" type="button" class="btn btn-danger" ng-disabled="usersCtrl.form.$invalid" ng-click="usersCtrl.cancelEdit()"&gt;Cancel&lt;/button&gt;\n\t\t\t&lt;/form&gt;\n\t\t&lt;/div&gt;\n\n\t\t&lt;div class="col-md-8 col-xs-12" align="center"&gt;\n\t\t\t&lt;h3 class="categ"&gt;Utilizatori inregistra\u021Bi:&lt;/h3&gt;\n\t\t\t&lt;div class="table-responsive"&gt;\n\t\t\t\t&lt;table class="table table-bordered table-hover"&gt;\n\t\t\t\t\t&lt;thead&gt;\n\t\t\t\t\t\t&lt;tr&gt;\n\t\t\t\t\t\t\t&lt;th&gt;&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;First Name&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;Last Name&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;Phone number&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;Email&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;Age&lt;/th&gt;\n\t\t\t\t\t\t\t&lt;th&gt;Gender&lt;/th&gt;\n\t\t\t\t\t\t&lt;/tr&gt;\n\t\t\t\t\t&lt;/thead&gt;\n\t\t\t\t\t&lt;tbody&gt;\n\t\t\t\t\t\t&lt;tr ng-repeat="user in usersCtrl.users"&gt;\n\t\t\t\t\t\t\t&lt;td style="white-space:nowrap;"&gt;\n\t\t\t\t\t\t\t\t&lt;div&gt;\n\t\t\t\t\t\t\t\t\t&lt;button class="btn btn-sm btn-danger" ng-click="usersCtrl.deleteUser(user)"&gt;&lt;i class="fa fa-trash" aria-hidden="true"&gt;&lt;/i&gt;&lt;/button&gt;\n\t\t\t\t\t\t\t\t\t&lt;button class="btn btn-sm btn-warning" ng-click="usersCtrl.editUser(user)"&gt;&lt;i class="fa fa-pencil" aria-hidden="true"&gt;&lt;/i&gt;&lt;/button&gt;\n\t\t\t\t\t\t\t\t\t&lt;input type="checkbox" ng-model="user.selected"&gt;\n\t\t\t\t\t\t\t\t&lt;/div&gt;\n\t\t\t\t\t\t\t&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.firstName}}&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.lastName}}&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.tel}}&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.email}}&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.age}}&lt;/td&gt;\n\t\t\t\t\t\t\t&lt;td&gt;{{user.gender}}&lt;/td&gt;\n\t\t\t\t\t\t&lt;/tr&gt;\n\t\t\t\t\t&lt;/tbody&gt;\n\t\t\t\t&lt;/table&gt;\n\t\t\t&lt;/div&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;');
+$templateCache.put('app/home/home.html','&lt;div class="container"&gt;\n\t&lt;h1 id="title_home"&gt;{{homeCtrl.title}}&lt;/h1&gt;\n&lt;/div&gt;');}]);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 14 2017 14:11:39 GMT+0300 (GTB Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
